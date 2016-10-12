@@ -130,21 +130,19 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
         }
 	    
       function getUserEmail(){ 
-                //mixpanel.identify();
+                mixpanel.identify();
                 var theEmail = document.getElementById("email").value; 
 	      	var validate = validateEmail(theEmail);
 	      if(validate){
+		      mixpanel.people.set({
+                            "$email": theEmail    // only special properties need the $
+                            });
 		      alert("Your email has been saved!");
 	      }else{
 		      alert("Please input a correct mail!");
 	      }
 	     
 	     window.location.href = 'https://eat-easy.github.io/test.html';
-                /*if (validateEmail(theEmail)) {
-                        mixpanel.people.set({
-                            "$email": theEmail    // only special properties need the $
-                            });
-                }*/
         }
     </script>
 

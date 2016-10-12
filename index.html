@@ -24,9 +24,6 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
 </head>
 
 <body>
- <script type="text/javascript">
-     mixpanel.identify("12102016"); 
-</script>
 
 
 <nav class="navbar navbar-transparent navbar-fixed-top" role="navigation">  
@@ -118,7 +115,7 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
                             <label class="sr-only" for="exampleInputEmail2">Email address</label>
                             <input type="email" id="email" class="form-control transparent" placeholder="Your email here...">
                           </div>
-                          <button type="submit" class="btn btn-danger btn-fill">Notify Me</button>
+                          <button onclick="getUserEmail()" type="submit" class="btn btn-danger btn-fill">Notify Me</button>
                         </form>
 
                     </div>
@@ -127,18 +124,20 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
         </div>
 
     <script type="text/javascript">
-    var theEmail = document.getElementById("email").value; 
+      function getUserEmail(){ 
+                var theEmail = document.getElementById("email").value; 
 
-     mixpanel.people.set({
-        "$email": theEmail,    // only special properties need the $
-        
-        "$created": "2016-10-12 10:15:54",
-        "$last_login": new Date(),         // properties can be dates...
-        
-        "credits": 150,                    // ...or numbers
-        
-        "gender": "Male"                    // feel free to define your own properties
-        });
+                mixpanel.people.set({
+                    "$email": theEmail,    // only special properties need the $
+                    
+                    "$created": "2016-10-12 10:15:54",
+                    "$last_login": new Date(),         // properties can be dates...
+                    
+                    "credits": 150,                    // ...or numbers
+                    
+                    "gender": "Male"                    // feel free to define your own properties
+                    });
+        }
     </script>
 
     </div>

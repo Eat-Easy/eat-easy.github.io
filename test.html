@@ -115,7 +115,7 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
                             <label class="sr-only" for="exampleInputEmail2">Email address</label>
                             <input type="email" id="email" class="form-control transparent" placeholder="Your email here...">
                           </div>
-                          <button onclick="getUserEmail();" type="submit" class="btn btn-danger btn-fill">Notify Me</button>
+                          <button onclick="getUserEmail();clearform();" type="submit" class="btn btn-danger btn-fill">Notify Me</button>
                         </form>
 
                     </div>
@@ -128,6 +128,10 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
             var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email);
         }
+	    function clearform()
+{
+    document.getElementById("email").value=""; //don't forget to set the textbox id
+}
       function getUserEmail(){ 
                 //mixpanel.identify();
                 var theEmail = document.getElementById("email").value; 

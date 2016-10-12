@@ -141,10 +141,16 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
                             "$email": theEmail,    // only special properties need the $
                             "$last_login": new Date()
                             });
+
+                alert("Merci pour votre confiance. Nous vous contacterons dès que l'application sera disponible.");
+                } else {
+                    alert("Erreur: donnez un email correct");
                 }
 
                 //setTimeout(function(){ location.reload(); }, 200);
-                alerte("Merci pour votre confiance. Nous vous dès que l'application sera disponible.");
+                
+                window.location.href = 'https://eat-easy.github.io/';
+
         }
 
 

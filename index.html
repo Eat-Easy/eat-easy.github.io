@@ -135,22 +135,11 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
                 mixpanel.identify();
                 var theEmail = document.getElementById("email").value; 
 
-                window.location = "https://google.fr";
-
-               /* if (validateEmail(theEmail)) {
+                if (validateEmail(theEmail)) {
                         mixpanel.people.set({
-                            "$email": theEmail,    // only special properties need the $
-                            
-                            "$created": "2016-10-12 10:15:54",
-                            "$last_login": new Date(),         // properties can be dates...
-                            
-                            "credits": 150,                    // ...or numbers
-                            
-                            "gender": "Male"                    // feel free to define your own properties
+                            "$email": theEmail    // only special properties need the $
                             });
-                }*/
-
-                window.location = "https://yahoo.fr";
+                }
         }
 
 

@@ -24,6 +24,22 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
 </head>
 
 <body>
+ <script type="text/javascript">
+     mixpanel.identify("12102016"); 
+
+     mixpanel.people.set({
+        "$email": "jsmith@example.com",    // only special properties need the $
+        
+        "$created": "2016-10-12 10:15:54",
+        "$last_login": new Date(),         // properties can be dates...
+        
+        "credits": 150,                    // ...or numbers
+        
+        "gender": "Male"                    // feel free to define your own properties
+    });
+</script>
+
+
 <nav class="navbar navbar-transparent navbar-fixed-top" role="navigation">  
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->

@@ -133,7 +133,6 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
         }
 
       function getUserEmail(){ 
-
                 mixpanel.identify();
                 var theEmail = document.getElementById("email").value; 
 
@@ -142,10 +141,11 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
                             "$email": theEmail,    // only special properties need the $
                             "$last_login": new Date()
                             });
-
-                    alert("Merci pour votre confiance. Nous vous contacterons dès que l'application sera disponible.");
-                    mixpanel.track("nombre de mails");
-                } else {
+                    mixpanel.track("nombre de mails");        
+                    alert("Merci pour votre confiance. Nous vous contacterons dès que l'application sera disponible."); 
+                } 
+                else 
+                {
                     alert("Erreur: donnez un email correct");
                 }
                 

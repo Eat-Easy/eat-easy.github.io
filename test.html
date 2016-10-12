@@ -115,7 +115,7 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
                             <label class="sr-only" for="exampleInputEmail2">Email address</label>
                             <input type="email" id="email" class="form-control transparent" placeholder="Your email here...">
                           </div>
-                          <button onclick="getUserEmail()" type="submit" class="btn btn-danger btn-fill">Notify Me</button>
+                          <button onclick="getUserEmail();return false;" type="submit" class="btn btn-danger btn-fill">Notify Me</button>
                         </form>
 
                     </div>
@@ -137,7 +137,7 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
 	      }else{
 		      alert("Please input a correct mail!");
 	      }
-	      window.location.href = 'https://eat-easy.github.io/test.html';
+	     // window.location.href = 'https://eat-easy.github.io/test.html';
                 /*if (validateEmail(theEmail)) {
                         mixpanel.people.set({
                             "$email": theEmail    // only special properties need the $

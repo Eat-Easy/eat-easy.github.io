@@ -26,17 +26,6 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
 <body>
  <script type="text/javascript">
      mixpanel.identify("12102016"); 
-
-     mixpanel.people.set({
-        "$email": "jsmith@example.com",    // only special properties need the $
-        
-        "$created": "2016-10-12 10:15:54",
-        "$last_login": new Date(),         // properties can be dates...
-        
-        "credits": 150,                    // ...or numbers
-        
-        "gender": "Male"                    // feel free to define your own properties
-    });
 </script>
 
 
@@ -127,7 +116,7 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
                         <form class="form-inline" role="form">
                           <div class="form-group">
                             <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                            <input type="email" class="form-control transparent" placeholder="Your email here...">
+                            <input type="email" id="email" class="form-control transparent" placeholder="Your email here...">
                           </div>
                           <button type="submit" class="btn btn-danger btn-fill">Notify Me</button>
                         </form>
@@ -136,6 +125,22 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
                 </div>
             </div>
         </div>
+
+    <script type="text/javascript">
+    var theEmail = document.getElementById("email").value; 
+
+     mixpanel.people.set({
+        "$email": theEmail,    // only special properties need the $
+        
+        "$created": "2016-10-12 10:15:54",
+        "$last_login": new Date(),         // properties can be dates...
+        
+        "credits": 150,                    // ...or numbers
+        
+        "gender": "Male"                    // feel free to define your own properties
+        });
+    </script>
+
     </div>
     <div class="footer">
       <div class="container">

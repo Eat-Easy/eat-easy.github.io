@@ -124,24 +124,34 @@ mixpanel.init("f6214cebc7939509c5a0e8450eded497");</script><!-- end Mixpanel -->
         </div>
 
     <script type="text/javascript">
+
+        function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+
       function getUserEmail(){ 
 
                 mixpanel.identify();
                 var theEmail = document.getElementById("email").value; 
 
-                mixpanel.people.set({
-                    "$email": theEmail,    // only special properties need the $
-                    
-                    "$created": "2016-10-12 10:15:54",
-                    "$last_login": new Date(),         // properties can be dates...
-                    
-                    "credits": 150,                    // ...or numbers
-                    
-                    "gender": "Male"                    // feel free to define your own properties
-                    });
+                if (validateEmail(theEmail)) {
+                        mixpanel.people.set({
+                            "$email": theEmail,    // only special properties need the $
+                            
+                            "$created": "2016-10-12 10:15:54",
+                            "$last_login": new Date(),         // properties can be dates...
+                            
+                            "credits": 150,                    // ...or numbers
+                            
+                            "gender": "Male"                    // feel free to define your own properties
+                            });
+                }
 
-                    location.reload();
+                window.location = "https://eat-easy.github.io";
         }
+
+
     </script>
 
     </div>
